@@ -20,6 +20,8 @@ con.on('open',  () => { //event on connection
     console.log("Connection is open!!");
 });
 
+app.use(express.json()); // json format middleware
+
 const studentsRouter = require('./routes/students');
 app.use('/students', studentsRouter); //middleware to forward incomming request
 
