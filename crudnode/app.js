@@ -20,6 +20,9 @@ con.on('open',  () => { //event on connection
     console.log("Connection is open!!");
 });
 
-app.listen(9000, () => { //creating a server
+const studentsRouter = require('./routes/students');
+app.use('/students', studentsRouter); //middleware to forward incomming request
+
+app.listen(9000, (req, res) => { //creating a server
     console.log("Server started !");
 });
